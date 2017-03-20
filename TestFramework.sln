@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SequenceFile", "SequenceFile.csproj", "{5C28D969-0B51-4E14-BFD4-D0C2D5B6E014}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SequenceFile", "SequenceFile\SequenceFile.csproj", "{5C28D969-0B51-4E14-BFD4-D0C2D5B6E014}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adaptor", "..\Adaptor\Adaptor.csproj", "{6075619E-0BAA-4985-8973-347B962DCE43}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adaptor", "Adaptor\Adaptor.csproj", "{6075619E-0BAA-4985-8973-347B962DCE43}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
