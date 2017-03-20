@@ -23,6 +23,7 @@ namespace TriCheer.Phoenix.SequenceFile
         int TestTimeout { get; set; }
         RunModes RunMode { get; set; }
         TestItemGroup TestItemGroup { get; set; }
+        ILoopSettings LoopSettings { get; set; }
         #endregion
     }
 }
