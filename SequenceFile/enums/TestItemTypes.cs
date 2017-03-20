@@ -5,11 +5,9 @@ using System.Text;
 
 namespace TriCheer.Phoenix.SequenceFile
 {
-    public enum StepRunModes
+    public enum TestItemTypes
     {
-        Normal,
-        Skip,
-        ForcePass,
-        ForceFail,
+        Step,
+        Sequence,
     }
 }

@@ -6,11 +6,8 @@ using TriCheer.Phoenix.Adaptor;
 
 namespace TriCheer.Phoenix.SequenceFile
 {
-    public interface IStep
+    public interface IStep : ITestItem
     {
-        string ID { get; set; }
-        string Name { get; set; }
-        StepRunModes RunMode { get; set; }
         StepTypes Type { get; set; }
         IAdaptor Adaptor { get; set; }
     }

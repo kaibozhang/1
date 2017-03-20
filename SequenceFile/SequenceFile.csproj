@@ -43,9 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Step\enums\StepRunModes.cs" />
+    <Compile Include="enums\TestItemGroup.cs" />
+    <Compile Include="enums\TestItemTypes.cs" />
+    <Compile Include="Interface\ITestItem.cs" />
+    <Compile Include="enums\RunModes.cs" />
     <Compile Include="Step\enums\StepTypes.cs" />
-    <Compile Include="Step\Interface\IStep.cs" />
+    <Compile Include="Interface\IStep.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
