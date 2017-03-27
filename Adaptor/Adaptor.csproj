@@ -40,6 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdaptorFactory.cs" />
+    <Compile Include="AdaptorTypes.cs" />
+    <Compile Include="DotNetAdaptor.cs" />
+    <Compile Include="DotNetParameter.cs" />
     <Compile Include="Interface\IAdaptor.cs" />
     <Compile Include="Interface\IParameter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

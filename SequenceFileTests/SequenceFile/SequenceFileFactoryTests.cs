@@ -24,7 +24,7 @@ namespace TriCheer.Phoenix.SequenceFile.Tests
         {
             SequenceFile seqFile = GenerateTestSequenceFile();
 
-            string filePath = "TestSequenceFile.pseq";
+            string filePath = "TestSequenceFile.xml";
             bool result = SequenceFileFactory.SaveSequenceFile(seqFile, filePath);
             Assert.AreEqual(true, result);
             Assert.AreEqual(true, File.Exists(filePath));
@@ -57,7 +57,16 @@ namespace TriCheer.Phoenix.SequenceFile.Tests
             IStep actionStep = StepFactory.CreateStep(StepTypes.Action);
             actionStep.Name = "Action step test";
             actionStep.Description = "this is a test action step";
+
+            IStep subActionStep = StepFactory.CreateStep(StepTypes.Action);
+            subActionStep.Name = "SubAction step test";
+            subActionStep.Description = "this is a sub test action step";
+
+
+            subActionStep.Childs.Add(actionStep);
+            actionStep.Childs.Add(subActionStep);
             mainSequence.Childs.Add(actionStep);
+            
 
             seqFile.MainSequence = mainSequence;
             return seqFile;

@@ -16,6 +16,7 @@ namespace TriCheer.Phoenix.SequenceFile
             this.TestItemGroup = TestItemGroups.Main;
             this.Childs = new List<ITestItem>();
             this.Variables = new List<Variable>();
+            this.Adaptor = AdaptorFactory.CreateAdaptor(AdaptorTypes.DotnetAdaptor);
 
             this.BreakPoint = false;
             this.EnableLogging = true;

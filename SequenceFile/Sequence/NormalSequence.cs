@@ -80,17 +80,14 @@ namespace TriCheer.Phoenix.SequenceFile
         {
             get; set;
         }
-
+        public RunModes RunMode
+        {
+            get; set;
+        }
         public ILoopSettings LoopSettings
         {
             get;set;
         }
-
-        public RunModes RunMode
-        {
-            get;set;
-        }
-
 
         #endregion
 
