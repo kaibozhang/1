@@ -47,13 +47,26 @@
     <Compile Include="enums\TestItemTypes.cs" />
     <Compile Include="Interface\ITestItem.cs" />
     <Compile Include="enums\RunModes.cs" />
+    <Compile Include="LoopSettings\CountPassLoop.cs" />
     <Compile Include="LoopSettings\ILoopSettings.cs" />
+    <Compile Include="LoopSettings\LoopSettingsFactory.cs" />
     <Compile Include="LoopSettings\LoopTypes.cs" />
     <Compile Include="LoopSettings\NoneLoop.cs" />
     <Compile Include="LoopSettings\TravelsalLoop.cs" />
+    <Compile Include="SequenceFile\ISequenceFile.cs" />
+    <Compile Include="SequenceFile\SequenceFile.cs" />
+    <Compile Include="SequenceFile\SequenceFileFactory.cs" />
+    <Compile Include="SequenceFile\SequenceFileVersionInfo.cs" />
+    <Compile Include="Sequence\ISequence.cs" />
+    <Compile Include="Sequence\NormalSequence.cs" />
+    <Compile Include="Sequence\SequenceFactory.cs" />
+    <Compile Include="Sequence\SequenceTypes.cs" />
+    <Compile Include="Step\ActionStep.cs" />
+    <Compile Include="Step\BaseStep.cs" />
     <Compile Include="Step\enums\StepTypes.cs" />
-    <Compile Include="Interface\IStep.cs" />
+    <Compile Include="Step\IStep.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Step\StepFactory.cs" />
     <Compile Include="Variables\Variable.cs" />
   </ItemGroup>
   <ItemGroup>

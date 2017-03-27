@@ -7,6 +7,12 @@ namespace TriCheer.Phoenix.SequenceFile
 {
     class NoneLoop : ILoopSettings
     {
+        #region ctor
+        public NoneLoop()
+        {
+            this.Name = "NoneLoop";
+        }
+        #endregion
         public string Name { get; set; }
 
         public LoopTypes LoopType

@@ -7,6 +7,15 @@ namespace TriCheer.Phoenix.SequenceFile
 {
     public class Variable
     {
+        #region ctor
+        public Variable()
+        {
+            this.Name = string.Empty;
+            this.Description = string.Empty;
+            this.Value = string.Empty;
+        }
+        #endregion
+
         #region prop
         public string Name { get; set; }
         public string Description { get; set; }

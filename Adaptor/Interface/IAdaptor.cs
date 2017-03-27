@@ -7,5 +7,8 @@ namespace TriCheer.Phoenix.Adaptor
 {
     public interface IAdaptor
     {
+        string TestModuleName { get; set; }
+        string MethodName { get; set; }
+        List<IParameter> Parameters { get; set; }
     }
 }

@@ -10,19 +10,20 @@ namespace TriCheer.Phoenix.SequenceFile
         #region attributes
         string Name { get; set; }
         string Description { get; set; }
-        TestItemTypes TestItemType { get; set; }
+        TestItemTypes TestItemType { get; }
+        TestItemGroups TestItemGroup { get; set; }
         List<ITestItem> Childs { get; set; }
+        List<Variable> Variables { get; set; }
         #endregion
 
         #region debug
         bool BreakPoint { get; set; }
-        bool IsEnableLogging { get; set; }
+        bool EnableLogging { get; set; }
         #endregion
 
         #region execution
         int TestTimeout { get; set; }
         RunModes RunMode { get; set; }
-        TestItemGroup TestItemGroup { get; set; }
         ILoopSettings LoopSettings { get; set; }
         #endregion
     }

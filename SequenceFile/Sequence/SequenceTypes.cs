@@ -5,10 +5,8 @@ using System.Text;
 
 namespace TriCheer.Phoenix.SequenceFile
 {
-    public enum TestItemGroups
+    public enum SequenceTypes
     {
-        Setup,
-        Main,
-        Cleanup,
+        Normal,
     }
 }

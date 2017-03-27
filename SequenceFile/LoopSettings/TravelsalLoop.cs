@@ -7,6 +7,14 @@ namespace TriCheer.Phoenix.SequenceFile
 {
     class TravelsalLoop : ILoopSettings
     {
+        #region ctor
+        public TravelsalLoop()
+        {
+            this.Name = "TravelsalLoop";
+            this.LoopVariables = new List<Variable>();
+        }
+        #endregion
+
         public string Name { get; set; }
 
         public LoopTypes LoopType
@@ -16,11 +24,10 @@ namespace TriCheer.Phoenix.SequenceFile
                 return LoopTypes.Travelsal;
             }
         }
-
-        List<Variable> loopVariables = new List<Variable>();
+        
         public List<Variable> LoopVariables
         {
-            get { return loopVariables; }
+            get;
         }
     }
 }

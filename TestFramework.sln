@@ -7,6 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SequenceFile", "SequenceFil
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adaptor", "Adaptor\Adaptor.csproj", "{6075619E-0BAA-4985-8973-347B962DCE43}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{2A4BD067-B7F3-46B0-9900-E08A133314DA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{1875D08D-5CD5-4E49-B400-2ADBC2105898}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SequenceFileTests", "SequenceFileTests\SequenceFileTests.csproj", "{5D3C544C-7915-4AB8-81A2-A8E5E58A5547}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,8 +27,17 @@ Global
 		{6075619E-0BAA-4985-8973-347B962DCE43}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6075619E-0BAA-4985-8973-347B962DCE43}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6075619E-0BAA-4985-8973-347B962DCE43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D3C544C-7915-4AB8-81A2-A8E5E58A5547}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D3C544C-7915-4AB8-81A2-A8E5E58A5547}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D3C544C-7915-4AB8-81A2-A8E5E58A5547}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D3C544C-7915-4AB8-81A2-A8E5E58A5547}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5C28D969-0B51-4E14-BFD4-D0C2D5B6E014} = {2A4BD067-B7F3-46B0-9900-E08A133314DA}
+		{6075619E-0BAA-4985-8973-347B962DCE43} = {2A4BD067-B7F3-46B0-9900-E08A133314DA}
+		{5D3C544C-7915-4AB8-81A2-A8E5E58A5547} = {1875D08D-5CD5-4E49-B400-2ADBC2105898}
 	EndGlobalSection
 EndGlobal

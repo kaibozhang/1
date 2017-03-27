@@ -8,7 +8,7 @@ namespace TriCheer.Phoenix.SequenceFile
 {
     public interface IStep : ITestItem
     {
-        StepTypes Type { get; set; }
+        StepTypes Type { get; }
         IAdaptor Adaptor { get; set; }
     }
 }
