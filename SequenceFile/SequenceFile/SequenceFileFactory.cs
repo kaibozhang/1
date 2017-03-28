@@ -5,7 +5,7 @@ using System.Text;
 using Polenter.Serialization;
 using System.IO;
 
-namespace TriCheer.Phoenix.SequenceFile
+namespace TriCheer.Phoenix.SeqManager.SeqFile
 {
     public class SequenceFileFactory
     {

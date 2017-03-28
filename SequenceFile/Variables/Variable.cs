@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace TriCheer.Phoenix.SequenceFile
+namespace TriCheer.Phoenix.SeqManager.SeqFile
 {
     public class Variable
     {
         #region ctor
         public Variable()
         {
-            this.Name = string.Empty;
-            this.Description = string.Empty;
-            this.Value = string.Empty;
+            Name = string.Empty;
+            Description = string.Empty;
+            Value = string.Empty;
         }
         #endregion
 

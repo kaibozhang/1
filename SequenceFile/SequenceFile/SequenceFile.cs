@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace TriCheer.Phoenix.SequenceFile
+namespace TriCheer.Phoenix.SeqManager.SeqFile
 {
     public class SequenceFile : ISequenceFile
     {
         #region ctor
         public SequenceFile()
         {
-            this.Name = string.Empty;
-            this.Description = string.Empty;
-            this.Comment = string.Empty;
-            this.MainSequence = SequenceFactory.CreateSequence(SequenceTypes.Normal);
-            this.SubSequences = new List<ISequence>();
-            this.Version = new SequenceFileVersionInfo();
+            Name = string.Empty;
+            Description = string.Empty;
+            Comment = string.Empty;
+            MainSequence = SequenceFactory.CreateSequence(SequenceTypes.Normal);
+            SubSequences = new List<ISequence>();
+            Version = new SequenceFileVersionInfo();
         }
         #endregion
 

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using TriCheer.Phoenix.Adaptor;
+using TriCheer.Phoenix.SeqManager.Adaptor;
 
-namespace TriCheer.Phoenix.SequenceFile
+namespace TriCheer.Phoenix.SeqManager.SeqFile
 {
     public interface IStep : ITestItem
     {

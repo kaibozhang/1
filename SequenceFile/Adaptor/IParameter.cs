@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace TriCheer.Phoenix.Adaptor
+namespace TriCheer.Phoenix.SeqManager.Adaptor
 {
     public interface IParameter
     {

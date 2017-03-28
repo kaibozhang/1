@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace TriCheer.Phoenix.SequenceFile
+namespace TriCheer.Phoenix.SeqManager.SeqFile
 {
     class NoneLoop : ILoopSettings
     {
         #region ctor
         public NoneLoop()
         {
-            this.Name = "NoneLoop";
+            Name = "NoneLoop";
         }
         #endregion
         public string Name { get; set; }

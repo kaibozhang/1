@@ -3,19 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace TriCheer.Phoenix.Adaptor
+namespace TriCheer.Phoenix.SeqManager.Adaptor
 {
-    class DotNetParameter : IParameter
+    public class DotNetParameter : IParameter
     {
         #region ctor
         public DotNetParameter()
         {
-            this.Name = string.Empty;
-            this.Description = string.Empty;
-            this.Value = string.Empty;
-            this.IsIn = true;
-            this.IsOut = false;
-            this.IsOptional = false;
+            Name = string.Empty;
+            Description = string.Empty;
+            Value = string.Empty;
+            IsIn = true;
+            IsOut = false;
+            IsOptional = false;
+        }
+
+        public DotNetParameter(string name) : this()
+        {
+            Name = name;
         }
         #endregion
 

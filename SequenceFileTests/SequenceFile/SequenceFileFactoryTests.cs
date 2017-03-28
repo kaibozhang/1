@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using TriCheer.Phoenix.SequenceFile;
+using TriCheer.Phoenix.SeqManager.SeqFile;
+using TriCheer.Phoenix.SeqManager.Adaptor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace TriCheer.Phoenix.SequenceFile.Tests
+namespace TriCheer.Phoenix.SeqManager.SeqFile.Tests
 {
     [TestClass()]
     public class SequenceFileFactoryTests
@@ -33,7 +34,7 @@ namespace TriCheer.Phoenix.SequenceFile.Tests
         [TestMethod()]
         public void LoadSequenceFileTest()
         {
-            string filePath = "TestSequenceFile.pseq";
+            string filePath = "TestSequenceFile.xml";
             ISequenceFile seqFile = SequenceFileFactory.LoadSequenceFile(filePath);
 
             Assert.IsNotNull(seqFile);
@@ -57,16 +58,24 @@ namespace TriCheer.Phoenix.SequenceFile.Tests
             IStep actionStep = StepFactory.CreateStep(StepTypes.Action);
             actionStep.Name = "Action step test";
             actionStep.Description = "this is a test action step";
+            IAdaptor adaptor = AdaptorFactory.CreateAdaptor(AdaptorTypes.DotnetAdaptor);
+            adaptor.MethodName = "Test";
+            adaptor.TestModuleName = "DotNetTest.dll";
+            adaptor.Parameters.Add(new DotNetParameter());
+            adaptor.Parameters.Add(new DotNetParameter("parameter1"));
+            adaptor.Parameters.Add(new DotNetParameter("parameter2"));
+            actionStep.Adaptor = adaptor;
 
             IStep subActionStep = StepFactory.CreateStep(StepTypes.Action);
             subActionStep.Name = "SubAction step test";
             subActionStep.Description = "this is a sub test action step";
 
-
-            subActionStep.Childs.Add(actionStep);
             actionStep.Childs.Add(subActionStep);
+
             mainSequence.Childs.Add(actionStep);
-            
+            mainSequence.Childs.Add(subActionStep);
+            mainSequence.Childs.Add(subActionStep);
+
 
             seqFile.MainSequence = mainSequence;
             return seqFile;

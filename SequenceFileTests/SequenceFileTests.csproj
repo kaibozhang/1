@@ -54,9 +54,9 @@
     <Compile Include="SequenceFile\SequenceFileFactoryTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SequenceFile\SequenceFile.csproj">
+    <ProjectReference Include="..\SequenceFile\SeqManager.csproj">
       <Project>{5C28D969-0B51-4E14-BFD4-D0C2D5B6E014}</Project>
-      <Name>SequenceFile</Name>
+      <Name>SeqManager</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

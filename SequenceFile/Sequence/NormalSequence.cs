@@ -3,26 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace TriCheer.Phoenix.SequenceFile
+namespace TriCheer.Phoenix.SeqManager.SeqFile
 {
     public class NormalSequence : ISequence
     {
         #region ctor
         public NormalSequence()
         {
-            this.Name = string.Empty;
-            this.Description = string.Empty;
-            this.TestItemGroup = TestItemGroups.Main;
-            this.TestItemType = TestItemTypes.Sequence;
-            this.Childs = new List<ITestItem>();
-            this.Variables = new List<Variable>();
+            Name = string.Empty;
+            Description = string.Empty;
+            TestItemGroup = TestItemGroups.Main;
+            TestItemType = TestItemTypes.Sequence;
+            Childs = new List<ITestItem>();
+            Variables = new List<Variable>();
 
-            this.BreakPoint = false;
-            this.EnableLogging = true;
+            BreakPoint = false;
+            EnableLogging = true;
 
-            this.TestTimeout = 60000;
-            this.LoopSettings = LoopSettingsFactory.CreateLoopSetting(LoopTypes.None);
-            this.RunMode = RunModes.Normal;
+            TestTimeout = 60000;
+            LoopSettings = LoopSettingsFactory.CreateLoopSetting(LoopTypes.None);
+            RunMode = RunModes.Normal;
         }
         #endregion
 

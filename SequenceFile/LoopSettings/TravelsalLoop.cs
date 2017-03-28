@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace TriCheer.Phoenix.SequenceFile
+namespace TriCheer.Phoenix.SeqManager.SeqFile
 {
     class TravelsalLoop : ILoopSettings
     {
         #region ctor
         public TravelsalLoop()
         {
-            this.Name = "TravelsalLoop";
-            this.LoopVariables = new List<Variable>();
+            Name = "TravelsalLoop";
+            LoopVariables = new List<Variable>();
         }
         #endregion
 

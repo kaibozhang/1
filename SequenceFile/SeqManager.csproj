@@ -7,8 +7,8 @@
     <ProjectGuid>{5C28D969-0B51-4E14-BFD4-D0C2D5B6E014}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TriCheer.Phoenix.SequenceFile</RootNamespace>
-    <AssemblyName>SeqFile</AssemblyName>
+    <RootNamespace>TriCheer.Phoenix.SeqManager</RootNamespace>
+    <AssemblyName>SeqMgr</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
@@ -43,6 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adaptor\AdaptorFactory.cs" />
+    <Compile Include="Adaptor\AdaptorTypes.cs" />
+    <Compile Include="Adaptor\DotNetAdaptor.cs" />
+    <Compile Include="Adaptor\DotNetParameter.cs" />
+    <Compile Include="Adaptor\IAdaptor.cs" />
+    <Compile Include="Adaptor\IParameter.cs" />
     <Compile Include="enums\TestItemGroup.cs" />
     <Compile Include="enums\TestItemTypes.cs" />
     <Compile Include="Interface\ITestItem.cs" />
@@ -68,12 +74,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Step\StepFactory.cs" />
     <Compile Include="Variables\Variable.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Adaptor\Adaptor.csproj">
-      <Project>{6075619e-0baa-4985-8973-347b962dce43}</Project>
-      <Name>Adaptor</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

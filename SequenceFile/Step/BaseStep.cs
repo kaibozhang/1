@@ -2,28 +2,28 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using TriCheer.Phoenix.Adaptor;
+using TriCheer.Phoenix.SeqManager.Adaptor;
 
-namespace TriCheer.Phoenix.SequenceFile
+namespace TriCheer.Phoenix.SeqManager.SeqFile
 {
     public abstract class BaseStep : IStep
     {
         #region ctor
         public BaseStep()
         {
-            this.Name = string.Empty;
-            this.Description = string.Empty;
-            this.TestItemGroup = TestItemGroups.Main;
-            this.Childs = new List<ITestItem>();
-            this.Variables = new List<Variable>();
-            this.Adaptor = AdaptorFactory.CreateAdaptor(AdaptorTypes.DotnetAdaptor);
+            Name = string.Empty;
+            Description = string.Empty;
+            TestItemGroup = TestItemGroups.Main;
+            Childs = new List<ITestItem>();
+            Variables = new List<Variable>();
+            Adaptor = AdaptorFactory.CreateAdaptor(AdaptorTypes.DotnetAdaptor);
 
-            this.BreakPoint = false;
-            this.EnableLogging = true;
+            BreakPoint = false;
+            EnableLogging = true;
 
-            this.TestTimeout = 30000;
-            this.RunMode = RunModes.Normal;
-            this.LoopSettings = LoopSettingsFactory.CreateLoopSetting(LoopTypes.None);
+            TestTimeout = 30000;
+            RunMode = RunModes.Normal;
+            LoopSettings = LoopSettingsFactory.CreateLoopSetting(LoopTypes.None);
         }
         #endregion
 
