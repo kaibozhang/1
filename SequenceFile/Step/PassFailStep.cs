@@ -2,24 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using TriCheer.Phoenix.SeqManager.Adaptor;
 
 namespace TriCheer.Phoenix.SeqManager.SeqFile
 {
-    public class ActionStep : BaseStep
+    class PassFailStep : BaseStep
     {
-        #region ctor
-        public ActionStep()
-        {
-            this.Name = "Action Step";
-        }
-        #endregion
-
         public override StepTypes Type
         {
             get
             {
-                return StepTypes.Action;
+                return StepTypes.PassOrFailTest;
             }
         }
     }

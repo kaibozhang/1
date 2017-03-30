@@ -72,6 +72,7 @@
     <Compile Include="Step\enums\StepTypes.cs" />
     <Compile Include="Step\IStep.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Step\PassFailStep.cs" />
     <Compile Include="Step\StepFactory.cs" />
     <Compile Include="Variables\Variable.cs" />
   </ItemGroup>

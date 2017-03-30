@@ -1,0 +1,117 @@
+﻿<Window x:Class="TriCheer.Phoenix.SeqEditor.SequenceEditor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TriCheer.Phoenix.SeqEditor"
+        xmlns:avalonDock="http://avalondock.codeplex.com"
+        xmlns:shell="clr-namespace:Microsoft.Windows.Shell;assembly=AvalonDock"
+        mc:Ignorable="d"
+        Title="SequenceEditor" Height="600" Width="800" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <local:ActiveDocumentConverter x:Key="ActiveDocumentConverter"/>
+        <avalonDock:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <!--menu-->
+            <RowDefinition Height="auto"></RowDefinition>
+            <!--tool bar-->
+            <RowDefinition Height="auto"></RowDefinition>
+            <!--main grid row-->
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0">
+            <MenuItem Header="File">
+                <MenuItem Header="New Sequence File" Command="{Binding CreateSeqFileCMD}"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <ToolBarPanel Grid.Row="1">
+            <ToolBar>
+                <Button Name="New" Command="{Binding CreateSeqFileCMD}" Content="New"></Button>
+            </ToolBar>
+        </ToolBarPanel>
+
+        <avalonDock:DockingManager 
+            x:Name="dockMgr" 
+            DocumentsSource="{Binding SequenceFileVMs}"
+            AnchorablesSource="{Binding StepSettingsVM}"
+            
+            ActiveContent="{Binding ActiveSequenceFileVM, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,Converter={StaticResource ActiveDocumentConverter}}"
+            Grid.Row="2"  
+            AllowMixedOrientation="True"
+            >
+            <!--templates-->
+            <avalonDock:DockingManager.LayoutItemTemplateSelector>
+                <local:PanesTemplateSelector>
+                    <local:PanesTemplateSelector.SequenceFileViewTemplate>
+                        <DataTemplate>
+                            <!--SequenceFileTab-->
+                            <local:SequenceFileTab></local:SequenceFileTab>
+                        </DataTemplate>
+                    </local:PanesTemplateSelector.SequenceFileViewTemplate>
+                    <local:PanesTemplateSelector.StepSettingsTemplate>
+                        <DataTemplate>
+                            <!--StepSettings-->
+                            <local:StepSettings></local:StepSettings>
+                        </DataTemplate>
+                    </local:PanesTemplateSelector.StepSettingsTemplate>
+                    <local:PanesTemplateSelector.TestModuleMgrTemplate>
+                        <DataTemplate>
+                            <!--Test Moudles Mgr-->
+                            <local:TestModuleMgr></local:TestModuleMgr>
+                        </DataTemplate>
+                    </local:PanesTemplateSelector.TestModuleMgrTemplate>
+                </local:PanesTemplateSelector>
+            </avalonDock:DockingManager.LayoutItemTemplateSelector>
+
+            <!--container style-->
+            <avalonDock:DockingManager.LayoutItemContainerStyleSelector>
+                <local:PanesStyleSelector>
+                    <local:PanesStyleSelector.ToolStyle>
+                        <Style TargetType="{x:Type avalonDock:LayoutAnchorableItem}">
+                            <Setter Property="Title" Value="{Binding Model.Title}"/>
+                            <Setter Property="IconSource" Value="{Binding Model.IconSource}"/>
+                            <Setter Property="Visibility" Value="{Binding Model.IsVisible, Mode=TwoWay, 
+                                Converter={StaticResource BoolToVisibilityConverter}, 
+                                ConverterParameter={x:Static Visibility.Hidden}}"/>
+                            <Setter Property="ContentId" Value="{Binding Model.ContentId}"/>
+                            <Setter Property="IsSelected" Value="{Binding Model.IsSelected, Mode=TwoWay}"/>
+                            <Setter Property="IsActive" Value="{Binding Model.IsActive, Mode=TwoWay}"/>
+                        </Style>
+                    </local:PanesStyleSelector.ToolStyle>
+                    <local:PanesStyleSelector.FileStyle>
+                        <Style TargetType="{x:Type avalonDock:LayoutItem}">
+                            <Setter Property="Title" Value="{Binding Model.Title}"/>
+                            <Setter Property="ToolTip" Value="{Binding Model.FilePath}"/>
+                            <Setter Property="CloseCommand" Value="{Binding Model.CloseCommand}"/>
+                            <Setter Property="IconSource" Value="{Binding Model.IconSource}"/>
+                            <Setter Property="ContentId" Value="{Binding Model.ContentId}"/>
+                        </Style>
+                    </local:PanesStyleSelector.FileStyle>
+                </local:PanesStyleSelector>
+            </avalonDock:DockingManager.LayoutItemContainerStyleSelector>
+            <avalonDock:DockingManager.LayoutUpdateStrategy>
+                <local:LayoutInitializer/>
+            </avalonDock:DockingManager.LayoutUpdateStrategy>
+
+            <!--layout-->
+            <avalonDock:LayoutRoot>
+                <avalonDock:LayoutPanel Orientation="Horizontal">
+                    <avalonDock:LayoutAnchorablePane DockWidth="150">
+                        <avalonDock:LayoutAnchorable Title="TestModules" ContentId="TestModules">
+                            <!--local:TestModuleMgr></-->
+                        </avalonDock:LayoutAnchorable>
+                    </avalonDock:LayoutAnchorablePane>
+
+                    <avalonDock:LayoutDocumentPane>
+                        <!--Binded SequenceFiles-->
+                    </avalonDock:LayoutDocumentPane>
+
+                    <avalonDock:LayoutAnchorablePane Name="Step Settings Panel"  DockWidth="150">
+                    </avalonDock:LayoutAnchorablePane>
+                </avalonDock:LayoutPanel>
+            </avalonDock:LayoutRoot>
+        </avalonDock:DockingManager>
+    </Grid>
+</Window>
