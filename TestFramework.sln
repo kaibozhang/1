@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SequenceFileTests", "Sequen
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SequenceEditor", "SequenceEditor\SequenceEditor.csproj", "{08C383A3-AFB7-411C-9672-8159CE17F801}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleSequenceEditor", "SimpleSequenceEditor\SimpleSequenceEditor.csproj", "{D06BDCFC-672E-46AD-AEBE-5DEBFF50A810}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{08C383A3-AFB7-411C-9672-8159CE17F801}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08C383A3-AFB7-411C-9672-8159CE17F801}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08C383A3-AFB7-411C-9672-8159CE17F801}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D06BDCFC-672E-46AD-AEBE-5DEBFF50A810}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D06BDCFC-672E-46AD-AEBE-5DEBFF50A810}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D06BDCFC-672E-46AD-AEBE-5DEBFF50A810}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D06BDCFC-672E-46AD-AEBE-5DEBFF50A810}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,5 +45,6 @@ Global
 		{5C28D969-0B51-4E14-BFD4-D0C2D5B6E014} = {2A4BD067-B7F3-46B0-9900-E08A133314DA}
 		{5D3C544C-7915-4AB8-81A2-A8E5E58A5547} = {1875D08D-5CD5-4E49-B400-2ADBC2105898}
 		{08C383A3-AFB7-411C-9672-8159CE17F801} = {2A4BD067-B7F3-46B0-9900-E08A133314DA}
+		{D06BDCFC-672E-46AD-AEBE-5DEBFF50A810} = {2A4BD067-B7F3-46B0-9900-E08A133314DA}
 	EndGlobalSection
 EndGlobal

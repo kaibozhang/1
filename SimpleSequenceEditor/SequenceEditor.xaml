@@ -1,0 +1,43 @@
+﻿<Window x:Class="Tricheer.Phoneix.SimpleSequenceEditor.SequenceEditor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tricheer.Phoneix.SimpleSequenceEditor"
+        xmlns:ui="clr-namespace:Tricheer.Phoneix.SimpleSequenceEditor.UI"
+        mc:Ignorable="d"
+        Title="SequenceEditor" Height="600" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Menu>
+            <MenuItem Header="File">
+                <MenuItem Header="New"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <ToolBarPanel Grid.Row="1">
+            <ToolBar>
+                <Button>New</Button>
+            </ToolBar>
+        </ToolBarPanel>
+
+        <!--main grid-->
+        <Grid Grid.Row="2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30*"></ColumnDefinition>
+                    <ColumnDefinition Width="50*"></ColumnDefinition>
+                    <ColumnDefinition Width="50*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <ui:TestModulePanel Grid.Column="0"></ui:TestModulePanel>
+                <GridSplitter Width="3"></GridSplitter>
+                <ui:SequenceFilePanel Grid.Column="1"></ui:SequenceFilePanel>
+                <GridSplitter Width="3" Grid.Column="1"></GridSplitter>
+                <ui:StepSettingsPanel Grid.Column="2"></ui:StepSettingsPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
