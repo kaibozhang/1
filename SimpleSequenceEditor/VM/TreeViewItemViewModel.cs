@@ -36,10 +36,11 @@ namespace Tricheer.Phoneix.SimpleSequenceEditor.VM
 
         bool _isExpanded;
         bool _isSelected;
+        bool _isChecked;
         #endregion
 
         #region props
-        public ObservableCollection<TreeViewItemViewModel> Children
+        public virtual ObservableCollection<TreeViewItemViewModel> Children
         {
             get { return _children; }
         }
@@ -83,6 +84,24 @@ namespace Tricheer.Phoneix.SimpleSequenceEditor.VM
                     _isSelected = value;
                     this.RaisePropertyChanged("IsSelected");
                 }
+            }
+        }
+
+        public bool IsChecked
+        {
+            get { return _isChecked; }
+            set
+            {
+                _isChecked = value;
+                if (this.Children != null)
+                {
+                    foreach (TreeViewItemViewModel item in this.Children)
+                    {
+                        item.IsChecked = value;
+                    }
+                }
+                
+                RaisePropertyChanged("IsChecked");
             }
         }
 

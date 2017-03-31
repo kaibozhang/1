@@ -7,7 +7,7 @@ using TriCheer.Phoenix.SeqManager.SeqFile;
 
 namespace Tricheer.Phoneix.SimpleSequenceEditor.VM
 {
-    class SequenceVM : TreeViewItemViewModel
+    class SequenceVM : BaseTestItemVM
     {
         #region ctor
         public SequenceVM(ISequence seq) : base(null, true)
@@ -52,7 +52,9 @@ namespace Tricheer.Phoneix.SimpleSequenceEditor.VM
 
             foreach (ITestItem item in seq.Children)
             {
-                base.Children.Add(new TestItemVM(item, this));
+                TestItemVM tivm = new TestItemVM(item, this);
+                tivm.IsExpanded = true;
+                base.Children.Add(tivm);
             }
         }
         #endregion

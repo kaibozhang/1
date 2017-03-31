@@ -66,8 +66,13 @@ namespace TriCheer.Phoenix.ModuleAdaptor
             {
                 middle += string.Format("{0} {1},", pi.Type.ToString(), pi.Name);
             }
-            middle = middle.Substring(0, middle.Length - 1);
-            return head + middle + ")";
+            if (!string.IsNullOrEmpty(middle))
+            {
+                middle = middle.Substring(0, middle.Length - 1);
+            }
+            string all = head + middle + ")";
+            all = all.Replace("System.", "");
+            return all;
         }
         #endregion
     }

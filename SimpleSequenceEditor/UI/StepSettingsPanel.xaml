@@ -6,8 +6,30 @@
              xmlns:local="clr-namespace:Tricheer.Phoneix.SimpleSequenceEditor.UI"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="ControlStyles.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
     <Grid>
-        <StackPanel></StackPanel>
-            
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30*"></ColumnDefinition>
+            <ColumnDefinition Width="70*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" Orientation="Vertical">
+            <Label>Name:</Label>
+            <Label>Description:</Label>
+            <Label>Step Group:</Label>
+            <Label>RunMode:</Label>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Orientation="Vertical">
+            <TextBox x:Name="stepName" Style="{StaticResource ResourceKey=BasicControlStyle}"></TextBox>
+            <TextBox x:Name="description" Style="{StaticResource ResourceKey=BasicControlStyle}"></TextBox>
+            <ComboBox x:Name="stepGroup" Style="{StaticResource ResourceKey=BasicControlStyle}"></ComboBox>
+            <ComboBox x:Name="stepRunMode" Style="{StaticResource ResourceKey=BasicControlStyle}"></ComboBox>
+        </StackPanel>
+
     </Grid>
 </UserControl>

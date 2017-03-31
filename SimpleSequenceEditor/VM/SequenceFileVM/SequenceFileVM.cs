@@ -58,9 +58,12 @@ namespace Tricheer.Phoneix.SimpleSequenceEditor.VM
             }
             foreach (ISequence seq in seqFile.Sequences)
             {
-                seqVMs.Add(new SequenceVM(seq));
+                SequenceVM seqVM = new SequenceVM(seq);
+                seqVM.IsExpanded = true;
+                seqVM.IsChecked = true;
+                seqVMs.Add(seqVM);
             }
-            RaisePropertyChanged("ChildrenVMs");
+            //RaisePropertyChanged("ChildrenVMs");
         }
 
         void OnTestItemSelectionChanged(object parameter)

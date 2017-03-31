@@ -80,6 +80,8 @@
     <Compile Include="UI\TestModulePanel.xaml.cs">
       <DependentUpon>TestModulePanel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="VM\SequenceFileVM\BaseTestItemVM.cs" />
+    <Compile Include="VM\StepSettingsVM.cs" />
     <Compile Include="VM\TestModuleVM\AssemblyInfoVM.cs" />
     <Compile Include="VM\TestModuleVM\ClassInfoVM.cs" />
     <Compile Include="VM\TestModuleVM\MethodInfoVM.cs" />
@@ -121,6 +123,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="SequenceEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\ControlStyles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
