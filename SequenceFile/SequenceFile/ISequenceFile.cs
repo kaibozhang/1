@@ -10,8 +10,7 @@ namespace TriCheer.Phoenix.SeqManager.SeqFile
         string Name { get; set; }
         string Description { get; set; }
         string Comment { get; set; }
+        List<ISequence> Sequences { get; set; }
         SequenceFileVersionInfo Version { get; set; }
-        ISequence MainSequence { get; set; }
-        List<ISequence> SubSequences { get; set; }
     }
 }

@@ -7,7 +7,7 @@ namespace TriCheer.Phoenix.SeqManager.SeqFile
 {
     class PassFailStep : BaseStep
     {
-        public override StepTypes Type
+        public override StepTypes StepType
         {
             get
             {

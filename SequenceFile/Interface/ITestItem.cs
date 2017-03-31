@@ -12,7 +12,8 @@ namespace TriCheer.Phoenix.SeqManager.SeqFile
         string Description { get; set; }
         TestItemTypes TestItemType { get; }
         TestItemGroups TestItemGroup { get; set; }
-        List<ITestItem> Childs { get; set; }
+        StepTypes StepType { get;}
+        List<ITestItem> Children { get; set; }
         List<Variable> Variables { get; set; }
         #endregion
 

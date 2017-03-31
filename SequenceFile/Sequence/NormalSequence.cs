@@ -14,7 +14,7 @@ namespace TriCheer.Phoenix.SeqManager.SeqFile
             Description = string.Empty;
             TestItemGroup = TestItemGroups.Main;
             TestItemType = TestItemTypes.Sequence;
-            Childs = new List<ITestItem>();
+            Children = new List<ITestItem>();
             Variables = new List<Variable>();
 
             BreakPoint = false;
@@ -52,7 +52,15 @@ namespace TriCheer.Phoenix.SeqManager.SeqFile
             get;set;
         }
 
-        public List<ITestItem> Childs
+        public StepTypes StepType
+        {
+            get
+            {
+                return StepTypes.None;
+            }
+        }
+
+        public List<ITestItem> Children
         {
             get;set;
         }
@@ -88,7 +96,6 @@ namespace TriCheer.Phoenix.SeqManager.SeqFile
         {
             get;set;
         }
-
         #endregion
 
     }

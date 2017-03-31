@@ -20,7 +20,7 @@
         </Menu>
         <ToolBarPanel Grid.Row="1">
             <ToolBar>
-                <Button>New</Button>
+                <Button Content="New" Command="{Binding CreateSeqFileCmd}"/>
             </ToolBar>
         </ToolBarPanel>
 
@@ -32,11 +32,21 @@
                     <ColumnDefinition Width="50*"></ColumnDefinition>
                     <ColumnDefinition Width="50*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <ui:TestModulePanel Grid.Column="0"></ui:TestModulePanel>
+                <ui:TestModulePanel Grid.Column="0" DataContext="{Binding TestModulePanelVM}"></ui:TestModulePanel>
                 <GridSplitter Width="3"></GridSplitter>
-                <ui:SequenceFilePanel Grid.Column="1"></ui:SequenceFilePanel>
+                <ui:SequenceFilePanel Grid.Column="1" DataContext="{Binding SeqFileVM}"></ui:SequenceFilePanel>
                 <GridSplitter Width="3" Grid.Column="1"></GridSplitter>
-                <ui:StepSettingsPanel Grid.Column="2"></ui:StepSettingsPanel>
+                
+                <Grid Grid.Column="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <ui:StepSettingsPanel></ui:StepSettingsPanel>
+                    <GridSplitter Height="3" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"></GridSplitter>
+                    <ui:ParametersPanel Grid.Row="1"></ui:ParametersPanel>
+
+                </Grid>
             </Grid>
         </Grid>
     </Grid>

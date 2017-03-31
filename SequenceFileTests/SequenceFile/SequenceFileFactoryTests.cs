@@ -70,14 +70,14 @@ namespace TriCheer.Phoenix.SeqManager.SeqFile.Tests
             subActionStep.Name = "SubAction step test";
             subActionStep.Description = "this is a sub test action step";
 
-            actionStep.Childs.Add(subActionStep);
+            actionStep.Children.Add(subActionStep);
 
-            mainSequence.Childs.Add(actionStep);
-            mainSequence.Childs.Add(subActionStep);
-            mainSequence.Childs.Add(subActionStep);
+            mainSequence.Children.Add(actionStep);
+            mainSequence.Children.Add(subActionStep);
+            mainSequence.Children.Add(subActionStep);
 
 
-            seqFile.MainSequence = mainSequence;
+            seqFile.Sequences.Add(mainSequence);
             return seqFile;
         }
     }

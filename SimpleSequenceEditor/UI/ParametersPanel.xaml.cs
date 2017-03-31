@@ -9,20 +9,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Tricheer.Phoneix.SimpleSequenceEditor.VM;
 
-namespace Tricheer.Phoneix.SimpleSequenceEditor
+namespace Tricheer.Phoneix.SimpleSequenceEditor.UI
 {
     /// <summary>
-    /// Interaction logic for SequenceEditor.xaml
+    /// Interaction logic for ParametersPanel.xaml
     /// </summary>
-    public partial class SequenceEditor : Window
+    public partial class ParametersPanel : UserControl
     {
-        public SequenceEditor()
+        public ParametersPanel()
         {
             InitializeComponent();
-            this.DataContext = SequenceEditorVM.Instance;
         }
     }
 }

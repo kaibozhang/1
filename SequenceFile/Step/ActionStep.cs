@@ -15,12 +15,9 @@ namespace TriCheer.Phoenix.SeqManager.SeqFile
         }
         #endregion
 
-        public override StepTypes Type
+        public override StepTypes StepType
         {
-            get
-            {
-                return StepTypes.Action;
-            }
+            get { return StepTypes.Action; }
         }
     }
 }

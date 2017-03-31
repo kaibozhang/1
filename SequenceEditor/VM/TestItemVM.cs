@@ -47,7 +47,7 @@ namespace TriCheer.Phoenix.SeqEditor
         #region methods
         void LoadChilds()
         {
-            foreach (ITestItem item in item.Childs)
+            foreach (ITestItem item in item.Children)
             {
                 childVMs.Add(new TestItemVM(item));
             }

@@ -14,7 +14,7 @@ namespace TriCheer.Phoenix.SeqManager.SeqFile
             Name = string.Empty;
             Description = string.Empty;
             TestItemGroup = TestItemGroups.Main;
-            Childs = new List<ITestItem>();
+            Children = new List<ITestItem>();
             Variables = new List<Variable>();
             Adaptor = AdaptorFactory.CreateAdaptor(AdaptorTypes.DotnetAdaptor);
 
@@ -37,7 +37,7 @@ namespace TriCheer.Phoenix.SeqManager.SeqFile
             get;set;
         }
 
-        public abstract StepTypes Type
+        public abstract StepTypes StepType
         {
             get;
         }
@@ -56,7 +56,7 @@ namespace TriCheer.Phoenix.SeqManager.SeqFile
         {
             get;set;
         }
-        public List<ITestItem> Childs
+        public List<ITestItem> Children
         {
             get;set;
         }
@@ -94,6 +94,8 @@ namespace TriCheer.Phoenix.SeqManager.SeqFile
         {
             get;set;
         }
+
+
         #endregion
 
     }

@@ -7,6 +7,7 @@ namespace TriCheer.Phoenix.SeqManager.SeqFile
 {
     public enum StepTypes
     {
+        None,
         Label,
         Action,
         PassOrFailTest,

@@ -13,12 +13,15 @@ namespace TriCheer.Phoenix.SeqManager.SeqFile
             Name = string.Empty;
             Description = string.Empty;
             Comment = string.Empty;
-            MainSequence = SequenceFactory.CreateSequence(SequenceTypes.Normal);
-            SubSequences = new List<ISequence>();
             Version = new SequenceFileVersionInfo();
         }
         #endregion
 
+        #region members
+        List<ISequence> seqs = new List<ISequence>();
+        #endregion
+
+        #region props
         public string Name
         {
             get; set;
@@ -37,15 +40,18 @@ namespace TriCheer.Phoenix.SeqManager.SeqFile
             get; set;
         }
 
-        public ISequence MainSequence
+        public List<ISequence> Sequences
         {
-            get;set;
+            get { return seqs; }
+            set { seqs = value; }
         }
+        #endregion
 
-        public List<ISequence> SubSequences
-        {
-            get;set;
-        }
+        // 
+        //         public List<ISequence> SubSequences
+        //         {
+        //             get;set;
+        //         }
 
     }
 }
