@@ -80,16 +80,16 @@
     <Compile Include="UI\TestModulePanel.xaml.cs">
       <DependentUpon>TestModulePanel.xaml</DependentUpon>
     </Compile>
-    <Compile Include="VM\AssemblyInfoVM.cs" />
-    <Compile Include="VM\ClassInfoVM.cs" />
-    <Compile Include="VM\MethodInfoVM.cs" />
-    <Compile Include="VM\ParameterInfoVM.cs" />
+    <Compile Include="VM\TestModuleVM\AssemblyInfoVM.cs" />
+    <Compile Include="VM\TestModuleVM\ClassInfoVM.cs" />
+    <Compile Include="VM\TestModuleVM\MethodInfoVM.cs" />
+    <Compile Include="VM\TestModuleVM\ParameterInfoVM.cs" />
     <Compile Include="VM\SequenceEditorVM.cs" />
     <Compile Include="VM\SequenceFileVM\SequenceFileVM.cs" />
     <Compile Include="VM\SequenceFileVM\SequenceVM.cs" />
     <Compile Include="VM\SequenceFileVM\TestItemVM.cs" />
-    <Compile Include="VM\TestModulePanelVM.cs" />
-    <Compile Include="VM\TestModuleVM.cs" />
+    <Compile Include="VM\TestModuleVM\TestModulePanelVM.cs" />
+    <Compile Include="VM\TestModuleVM\TestModuleVM.cs" />
     <Compile Include="VM\TreeViewItemViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

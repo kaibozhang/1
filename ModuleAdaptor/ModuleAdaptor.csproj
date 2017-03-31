@@ -40,10 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DotNetClassInfo.cs" />
-    <Compile Include="DotNetMethodInfo.cs" />
-    <Compile Include="DotNetParameterInfo.cs" />
-    <Compile Include="DotNetTestModule.cs" />
+    <Compile Include="DotNetAdaptor\DotNetClassInfo.cs" />
+    <Compile Include="DotNetAdaptor\DotNetMethodInfo.cs" />
+    <Compile Include="DotNetAdaptor\DotNetParameterInfo.cs" />
+    <Compile Include="DotNetAdaptor\DotNetTestModule.cs" />
     <Compile Include="IClassInfo.cs" />
     <Compile Include="IMethodInfo.cs" />
     <Compile Include="IParameterInfo.cs" />

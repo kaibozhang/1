@@ -25,6 +25,20 @@ namespace Tricheer.Phoneix.SimpleSequenceEditor.VM
         public string FullName { get { return mi.FullName; } }
         public string ReturnType { get { return mi.ReturnType.ToString(); } }
         public ObservableCollection<ParameterInfoVM> ParameterInfoVMs { get { return paramsInfoVMs; } }
+        public override bool IsSelected
+        {
+            get
+            {
+                return base.IsSelected;
+            }
+            set
+            {
+                base.IsSelected = value;
+                App.Messenger.NotifyColleagues(Messages.Method_SelectionChanged, this);
+            }
+        }
+
+
         #endregion
 
         #region methods
@@ -41,6 +55,7 @@ namespace Tricheer.Phoneix.SimpleSequenceEditor.VM
                 base.Children.Add(new ParameterInfoVM(pi, this));
             }
         }
+       
         #endregion
     }
 }
