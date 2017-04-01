@@ -13,7 +13,10 @@ namespace Tricheer.Phoneix.SimpleSequenceEditor.VM
     {
         #region ctor for singleton
         static SequenceEditorVM instance = new SequenceEditorVM();
-        private SequenceEditorVM() { }
+        private SequenceEditorVM()
+        {
+            App.Messenger.Register<MethodInfoVM>(Messages.AddStepWithMethod, AddStepWithMethod);
+        }
         public static SequenceEditorVM Instance { get { return instance; } }
         #endregion
 
@@ -32,6 +35,16 @@ namespace Tricheer.Phoneix.SimpleSequenceEditor.VM
         public TestModulePanelVM TestModulePanelVM { get { return testModulePanelVM; } }
         #endregion
 
+        #region callbacks
+        void AddStepWithMethod(MethodInfoVM miVM)
+        {
+            if (seqFileVM == null)
+            {
+                CreateSeqFileCmd.Execute(null);
+            }
+        }
+        #endregion
+
         #region commands
         RelayCommand createSeqFileCmd = null;
         public ICommand CreateSeqFileCmd
@@ -47,14 +60,15 @@ namespace Tricheer.Phoneix.SimpleSequenceEditor.VM
         }
         void OnCreateSeqFile()
         {
-            //ISequenceFile seqFile = SequenceFileFactory.CreateSequenceFile();
+            ISequenceFile seqFile = SequenceFileFactory.CreateSequenceFile();
 
             // for test
-            SequenceFile seqFile = GenerateTestSequenceFile();
+            //SequenceFile seqFile = GenerateTestSequenceFile();
 
             SeqFileVM = new SequenceFileVM(seqFile);
         }
 
+        // for Test
         SequenceFile GenerateTestSequenceFile()
         {
             SequenceFile seqFile = new SequenceFile();
@@ -101,6 +115,43 @@ namespace Tricheer.Phoneix.SimpleSequenceEditor.VM
             seqFile.Sequences.Add(mainSequence);
             seqFile.Sequences.Add(mainSequence2);
             return seqFile;
+        }
+
+        RelayCommand addXttCmd = null;
+        public ICommand AddXTTFileCmd
+        {
+            get
+            {
+                if (addXttCmd == null)
+                {
+                    addXttCmd = new RelayCommand(AddXTT);
+                }
+                return addXttCmd;
+            }
+        }
+
+        void AddXTT()
+        {
+            var openFileDialog = new Microsoft.Win32.OpenFileDialog()
+            {
+                Filter = "Xtt Files (*.xtt)|*.xtt"
+            };
+            var result = openFileDialog.ShowDialog();
+            string xttPath = string.Empty;
+            if (result == true)
+            {
+                xttPath = openFileDialog.FileName;
+            }
+            else
+            {
+                return;
+            }
+
+            if (SeqFileVM == null)
+            {
+                CreateSeqFileCmd.Execute(null);
+            }
+            SeqFileVM.AddXttFile(xttPath);
         }
         #endregion
     }

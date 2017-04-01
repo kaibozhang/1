@@ -34,6 +34,9 @@
     <Reference Include="Polenter.SharpSerializer">
       <HintPath>..\3rdParty\Polenter.SharpSerializer.dll</HintPath>
     </Reference>
+    <Reference Include="QSPR3xttParse">
+      <HintPath>..\3rdParty\Qualcomm\QSPR3xttParse.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -62,11 +65,13 @@
     <Compile Include="SequenceFile\ISequenceFile.cs" />
     <Compile Include="SequenceFile\SequenceFile.cs" />
     <Compile Include="SequenceFile\SequenceFileFactory.cs" />
+    <Compile Include="SequenceFile\SequenceFileTypes.cs" />
     <Compile Include="SequenceFile\SequenceFileVersionInfo.cs" />
     <Compile Include="Sequence\ISequence.cs" />
     <Compile Include="Sequence\NormalSequence.cs" />
     <Compile Include="Sequence\SequenceFactory.cs" />
     <Compile Include="Sequence\SequenceTypes.cs" />
+    <Compile Include="Sequence\XttSequence.cs" />
     <Compile Include="Step\ActionStep.cs" />
     <Compile Include="Step\BaseStep.cs" />
     <Compile Include="Step\enums\StepTypes.cs" />
@@ -74,6 +79,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Step\PassFailStep.cs" />
     <Compile Include="Step\StepFactory.cs" />
+    <Compile Include="Step\XttStep.cs" />
     <Compile Include="Variables\Variable.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

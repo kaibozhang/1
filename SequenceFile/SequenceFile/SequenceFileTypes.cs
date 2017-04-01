@@ -5,9 +5,8 @@ using System.Text;
 
 namespace TriCheer.Phoenix.SeqManager.SeqFile
 {
-    public enum SequenceTypes
+    public enum SequenceFileTypes
     {
         Normal,
-        XTT,
     }
 }

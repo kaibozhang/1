@@ -6,18 +6,20 @@ using TriCheer.Phoenix.SeqManager.Adaptor;
 
 namespace TriCheer.Phoenix.SeqManager.SeqFile
 {
-    public class ActionStep : BaseStep
+    class XttStep : BaseStep
     {
         #region ctor
-        public ActionStep() : base()
+        public XttStep() : base()
         {
-            this.Name = "Action Step";
+
         }
         #endregion
-
         public override StepTypes StepType
         {
-            get { return StepTypes.Action; }
+            get
+            {
+                return StepTypes.XttStep;
+            }
         }
     }
 }

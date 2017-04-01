@@ -14,5 +14,6 @@ namespace TriCheer.Phoenix.SeqManager.SeqFile
         NumbericTest,
         MultiNumbericTest,
         StringValueTest,
+        XttStep,
     }
 }

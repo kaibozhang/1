@@ -18,6 +18,9 @@ namespace TriCheer.Phoenix.SeqManager.SeqFile
                 case StepTypes.PassOrFailTest:
                     step = new PassFailStep();
                     break;
+                case StepTypes.XttStep:
+                    step = new XttStep();
+                    break;
                 default:
                     step = null;
                     break;

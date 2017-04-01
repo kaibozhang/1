@@ -8,7 +8,8 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <TreeView ItemsSource="{Binding TestModuleVMs}">
+        <TreeView ItemsSource="{Binding TestModuleVMs}" PreviewMouseRightButtonDown="TreeViewItem_PreviewMouseRightButtonDown">
+            
             <TreeView.ItemContainerStyle>
                 <!-- This Style binds a TreeViewItem to a TreeViewItemViewModel. -->
                 <Style TargetType="{x:Type TreeViewItem}">
@@ -49,6 +50,8 @@
             <TreeView.ContextMenu>
                 <ContextMenu>
                     <MenuItem Header="Add Test Module" Command="{Binding AddTestModuleCmd}"></MenuItem>
+                    <Separator></Separator>
+                    <MenuItem Header="Add Step" Command="{Binding AddStepCmd}"></MenuItem>
                 </ContextMenu>
             </TreeView.ContextMenu>
             

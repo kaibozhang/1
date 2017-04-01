@@ -49,6 +49,22 @@ namespace Tricheer.Phoneix.SimpleSequenceEditor.VM
         }
         #endregion
 
+        #region public methods
+        public void AddXttFile(string filePath)
+        {
+            try
+            {
+                seqFile.LoadXtt(filePath);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            LoadChildren();
+        }
+        #endregion
+
         #region methods
         void LoadChildren()
         {

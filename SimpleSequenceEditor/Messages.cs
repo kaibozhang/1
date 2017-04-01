@@ -18,6 +18,8 @@ namespace Tricheer.Phoneix.SimpleSequenceEditor
 
         #region testModule operation
         public const string Method_SelectionChanged = "Method Selection Changed";
+        public const string Class_SelectionChanged = "Class Selection Changed";
+        public const string AddStepWithMethod = "Add Step with Method";
         #endregion
 
     }

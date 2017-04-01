@@ -12,5 +12,7 @@ namespace TriCheer.Phoenix.SeqManager.SeqFile
         string Comment { get; set; }
         List<ISequence> Sequences { get; set; }
         SequenceFileVersionInfo Version { get; set; }
+
+        void LoadXtt(string filePath);
     }
 }

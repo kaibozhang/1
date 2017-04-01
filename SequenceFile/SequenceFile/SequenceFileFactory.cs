@@ -33,6 +33,23 @@ namespace TriCheer.Phoenix.SeqManager.SeqFile
             }
         }
 
+        public static ISequenceFile LoadXttFile(string filePath)
+        {
+            SequenceFile seqFile = new SequenceFile();
+            try
+            {
+                filePath = Path.GetFullPath(filePath);
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            return seqFile;
+        }
+
         public static bool SaveSequenceFile(ISequenceFile seqFileInstance, string filePath)
         {
             SharpSerializer serializer = new SharpSerializer();

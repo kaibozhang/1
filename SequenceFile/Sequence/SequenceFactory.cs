@@ -9,11 +9,20 @@ namespace TriCheer.Phoenix.SeqManager.SeqFile
     {
         public static ISequence CreateSequence(SequenceTypes sequenceType)
         {
-            if (sequenceType == SequenceTypes.Normal)
+            ISequence seq;
+            switch(sequenceType)
             {
-                return new NormalSequence();
+                case SequenceTypes.Normal:
+                    seq = new NormalSequence();
+                    break;
+                case SequenceTypes.XTT:
+                    seq = new XttSequence();
+                    break;
+                default:
+                    seq = new NormalSequence();
+                    break;
             }
-            return null;
+            return seq;
         }
     }
 }

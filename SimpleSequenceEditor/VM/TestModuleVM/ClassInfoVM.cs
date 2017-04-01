@@ -24,6 +24,18 @@ namespace Tricheer.Phoneix.SimpleSequenceEditor.VM
         #region props
         public string Name { get { return ci.Name; } }
         public ObservableCollection<MethodInfoVM> MethodInfoVMs {  get { return methodInfoVMs; } }
+        public override bool IsSelected
+        {
+            get
+            {
+                return base.IsSelected;
+            }
+            set
+            {
+                base.IsSelected = value;
+                App.Messenger.NotifyColleagues(Messages.Class_SelectionChanged, this);
+            }
+        }
         #endregion
 
         #region methods
