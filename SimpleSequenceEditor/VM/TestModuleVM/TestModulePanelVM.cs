@@ -12,11 +12,13 @@ namespace Tricheer.Phoneix.SimpleSequenceEditor.VM
     class TestModulePanelVM : ObservableObject
     {
         #region ctor
-        public TestModulePanelVM()
+        private TestModulePanelVM()
         {
             App.Messenger.Register<MethodInfoVM>(Messages.Method_SelectionChanged, OnMethodSelectionChanged);
             App.Messenger.Register<ClassInfoVM>(Messages.Class_SelectionChanged, OnClassSelectionChanged);
         }
+        static TestModulePanelVM instance = new TestModulePanelVM();
+        public static TestModulePanelVM Instance { get { return instance; } }
         #endregion
 
         #region members

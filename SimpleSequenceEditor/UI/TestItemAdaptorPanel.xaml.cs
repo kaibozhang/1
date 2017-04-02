@@ -17,9 +17,9 @@ namespace Tricheer.Phoneix.SimpleSequenceEditor.UI
     /// <summary>
     /// Interaction logic for ParametersPanel.xaml
     /// </summary>
-    public partial class ParametersPanel : UserControl
+    public partial class TestItemAdaptorPanel : UserControl
     {
-        public ParametersPanel()
+        public TestItemAdaptorPanel()
         {
             InitializeComponent();
         }

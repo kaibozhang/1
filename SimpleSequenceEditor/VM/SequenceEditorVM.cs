@@ -22,7 +22,10 @@ namespace Tricheer.Phoneix.SimpleSequenceEditor.VM
 
         #region members
         SequenceFileVM seqFileVM;
-        static TestModulePanelVM testModulePanelVM = new TestModulePanelVM();
+        static SequenceFilePanelVM seqFilePanelVM = SequenceFilePanelVM.Instance;
+        static TestModulePanelVM testModulePanelVM = TestModulePanelVM.Instance;
+        static TestItemSettingsPanelVM stepSettingsPanelVM = TestItemSettingsPanelVM.Instance;
+        static TestItemAdaptorPanelVM tiapVM = TestItemAdaptorPanelVM.Instance;
         #endregion
 
         #region props
@@ -31,8 +34,10 @@ namespace Tricheer.Phoneix.SimpleSequenceEditor.VM
             get { return seqFileVM; }
             set { seqFileVM = value; RaisePropertyChanged("SeqFileVM"); }
         }
-
         public TestModulePanelVM TestModulePanelVM { get { return testModulePanelVM; } }
+        public TestItemSettingsPanelVM TestItemSettingsPanelVM { get { return stepSettingsPanelVM; } }
+        public TestItemAdaptorPanelVM TestItemAdaptorPanelVM { get { return tiapVM; } }
+        public SequenceFilePanelVM SequenceFilePanelVM { get { return seqFilePanelVM; } }
         #endregion
 
         #region callbacks
@@ -60,10 +65,10 @@ namespace Tricheer.Phoneix.SimpleSequenceEditor.VM
         }
         void OnCreateSeqFile()
         {
-            ISequenceFile seqFile = SequenceFileFactory.CreateSequenceFile();
+            //ISequenceFile seqFile = SequenceFileFactory.CreateSequenceFile();
 
             // for test
-            //SequenceFile seqFile = GenerateTestSequenceFile();
+            SequenceFile seqFile = GenerateTestSequenceFile();
 
             SeqFileVM = new SequenceFileVM(seqFile);
         }

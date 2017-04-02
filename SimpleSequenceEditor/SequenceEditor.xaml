@@ -35,9 +35,12 @@
                     <ColumnDefinition Width="40*"></ColumnDefinition>
                     <ColumnDefinition Width="40*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
+                <!--Test module panel-->
                 <ui:TestModulePanel Grid.Column="0" DataContext="{Binding TestModulePanelVM}"></ui:TestModulePanel>
                 <GridSplitter Width="3"></GridSplitter>
-                <ui:SequenceFilePanel Grid.Column="1" DataContext="{Binding SeqFileVM}"></ui:SequenceFilePanel>
+
+                <!--Sequence file panel-->
+                <ui:SequenceFilePanel Grid.Column="1" DataContext="{Binding SequenceFilePanelVM}"></ui:SequenceFilePanel>
                 <GridSplitter Width="3" Grid.Column="1"></GridSplitter>
                 
                 <Grid Grid.Column="2">
@@ -45,9 +48,10 @@
                         <RowDefinition Height="*"></RowDefinition>
                         <RowDefinition Height="*"></RowDefinition>
                     </Grid.RowDefinitions>
-                    <ui:StepSettingsPanel></ui:StepSettingsPanel>
+                    <ui:TestItemSettingsPanel DataContext="{Binding TestItemSettingsPanelVM}"></ui:TestItemSettingsPanel>
                     <GridSplitter Height="3" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"></GridSplitter>
-                    <ui:ParametersPanel Grid.Row="1"></ui:ParametersPanel>
+                    <ui:TestItemAdaptorPanel DataContext="{Binding TestItemAdaptorPanelVM}"
+                                             Grid.Row="1"></ui:TestItemAdaptorPanel>
 
                 </Grid>
             </Grid>

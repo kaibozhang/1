@@ -52,9 +52,23 @@ namespace Tricheer.Phoneix.SimpleSequenceEditor.VM
 
             foreach (ITestItem item in seq.Children)
             {
-                TestItemVM tivm = new TestItemVM(item, this);
-                tivm.IsExpanded = true;
-                base.Children.Add(tivm);
+                switch (item.TestItemType)
+                {
+                    case TestItemTypes.Sequence:
+                        ISequence seq = item as ISequence;
+                        SequenceVM seqVM = new SequenceVM(seq);
+                        seqVM.IsExpanded = true;
+                        base.Children.Add(seqVM);
+                        break;
+                    case TestItemTypes.Step:
+                        IStep step = item as IStep;
+                        StepVM stepVM = new StepVM(step, this);
+                        stepVM.IsExpanded = true;
+                        base.Children.Add(stepVM);
+                        break;
+                    default:
+                        break;
+                }
             }
         }
         #endregion

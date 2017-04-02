@@ -4,4 +4,19 @@
     <Style x:Key="BasicControlStyle" TargetType="{x:Type Control}">
         <Setter Property="Margin" Value="2,2,2,2"></Setter>
     </Style>
+
+    <Style x:Key="SequenceFileTabItemStyle" TargetType="{x:Type TabItem}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TabItem}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
 </ResourceDictionary>

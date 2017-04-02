@@ -7,10 +7,10 @@ using TriCheer.Phoenix.SeqManager.SeqFile;
 
 namespace Tricheer.Phoneix.SimpleSequenceEditor.VM
 {
-    class StepSettingsVM : ObservableObject
+    class TestItemSettingsVM : ObservableObject
     {
         #region ctor
-        public StepSettingsVM(IStep step)
+        public TestItemSettingsVM(IStep step)
         {
             this.step = step;
         }

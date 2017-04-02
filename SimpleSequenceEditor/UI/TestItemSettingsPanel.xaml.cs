@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace Tricheer.Phoneix.SimpleSequenceEditor.UI
 {
     /// <summary>
-    /// Interaction logic for StepSettingsPanel.xaml
+    /// Interaction logic for TestItemSettingsPanel.xaml
     /// </summary>
-    public partial class StepSettingsPanel : UserControl
+    public partial class TestItemSettingsPanel : UserControl
     {
-        public StepSettingsPanel()
+        public TestItemSettingsPanel()
         {
             InitializeComponent();
         }

@@ -15,17 +15,15 @@ namespace Tricheer.Phoneix.SimpleSequenceEditor.VM
         {
             this.seqFile = seqFile;
             LoadChildren();
-            App.Messenger.Register<TestItemVM>(Messages.TestItem_SelectionChanged, OnTestItemSelectionChanged);
-            App.Messenger.Register<SequenceVM>(Messages.Sequence_SelectionChanged, OnSequenceSelectionChanged);
         }
 
         #endregion
 
+
+
         #region members
         ISequenceFile seqFile;
         ObservableCollection<SequenceVM> seqVMs = new ObservableCollection<SequenceVM>();
-        SequenceVM activeSequenceVM;
-        TestItemVM activeTestItemVM;
         #endregion
 
         #region props
@@ -38,15 +36,10 @@ namespace Tricheer.Phoneix.SimpleSequenceEditor.VM
         {
             get { return seqVMs; }
         }
+        #endregion
 
-        public SequenceVM ActiveSequenceVM
-        {
-            get { return activeSequenceVM; }
-        }
-        public TestItemVM ActiveTestItemVM
-        {
-            get { return activeTestItemVM; }
-        }
+        #region callbacks
+
         #endregion
 
         #region public methods
@@ -82,23 +75,7 @@ namespace Tricheer.Phoneix.SimpleSequenceEditor.VM
             //RaisePropertyChanged("ChildrenVMs");
         }
 
-        void OnTestItemSelectionChanged(object parameter)
-        {
-            TestItemVM tiVM = parameter as TestItemVM;
-            if (tiVM.IsSelected)
-            {
-                activeTestItemVM = tiVM;
-            }
-        }
 
-        void OnSequenceSelectionChanged(object parameter)
-        {
-            SequenceVM seqVM = parameter as SequenceVM;
-            if (seqVM.IsSelected)
-            {
-                activeSequenceVM = seqVM;
-            }
-        }
         #endregion
     }
 }
